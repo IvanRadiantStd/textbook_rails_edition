@@ -1,0 +1,28 @@
+<ul class="pa_nav">
+	
+	<li><%= link_to 'Новый раздел', new_course_path  %></li>
+	<li><%= link_to 'Добавить тему', new_subject_path  %></li>
+
+</ul>
+
+<ul class="pu_tree">	
+	<% @courses.each do |course| %>
+		
+		<li><%= link_to course.title, edit_course_path(course)  %>
+			<ul>
+				<% course.subjects.each do |subject| %>
+					<li>&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to subject.title, edit_subject_path(subject)  %>
+						
+						<ul>
+							<% subject.themes.each do |theme| %>
+								<li>&nbsp;&nbsp;&nbsp;&nbsp;&ndash;<%= link_to theme.title, edit_theme_path(theme)  %></li>
+							<% end %>
+						</ul>
+
+					</li>
+				<% end %>
+			</ul>
+		</li>
+
+	<% end %>
+</ul>

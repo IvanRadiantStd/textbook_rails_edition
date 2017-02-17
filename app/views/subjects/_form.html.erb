@@ -1,0 +1,25 @@
+<%= form_for @subject do |f| %>
+	
+	<div class="form-control">
+				
+		<%= f.label :title %>
+		<%= f.text_field :title %>
+
+	</div>
+
+	<div class="form-control">
+				
+		<%= f.label :all_themes_title %>
+		<%= f.text_field :all_themes_title %>
+
+	</div>
+
+
+	<div class="form-control">
+				
+		<%= f.submit 'Добавить' %>
+
+	</div>
+
+
+<% end %>
